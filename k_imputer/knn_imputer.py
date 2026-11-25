@@ -39,7 +39,7 @@ class KNNImputerClass:
         self, data: pd.DataFrame, n_neighbors: int = 5
     ) -> pd.DataFrame:
         imputer = KNNImputer(n_neighbors=n_neighbors)
-        imputed_data = imputer.fit(data)
+        imputer = imputer.fit(data)
         imputed_data = imputer.transform(data)
         return pd.DataFrame(imputed_data, columns=data.columns, index=data.index)
 
